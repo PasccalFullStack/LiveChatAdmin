@@ -1,38 +1,82 @@
+:root {
+ --logo_size: 80px;
+ --logo_margin_left: 10vw;
+ --h1_container_width: 80vw;
+ --h1_font-size: 28px;
+ --showUserWidth: 180px;
+ --selectorWidth: 180px;
+ --selector_font_size: 18px;
+}
+@media screen and (max-width: 800px) {
+  :root {
+    --logo_size: 65px;
+    --logo_margin_left: 6vw;
+    --h1_container_width: 70vw;
+    --h1_font-size: 22px;
+    --selectorWidth: 100px;
+    --selector_font_size: 16px;
+   }
+}
+@media screen and (max-width: 560px) {
+  :root {
+    --logo_size: 50px;
+    --logo_margin_left: 4vw;
+    --h1_container_width: 60vw;
+    --h1_font-size: 14px;
+    --selectorWidth: 76px;
+    --selector_font_size: 12px;
+   }
+}
 .App {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(14, 7, 54);
+  background-image: linear-gradient(45deg, rgba(57,57,57, 0.26) 0%, rgba(57,57,57, 0.26) 50%,rgba(81,77,77, 0.24) 50%, rgba(81,77,77, 0.24) 71%,rgba(71,69,69, 0.36) 71%, rgba(71,69,69, 0.36) 100%),linear-gradient(45deg, rgba(57,57,57, 0.26) 0%, rgba(57,57,57, 0.26) 56%,rgba(81,77,77, 0.24) 56%, rgba(81,77,77, 0.24) 67%,rgba(71,69,69, 0.36) 67%, rgba(71,69,69, 0.36) 100%),linear-gradient(135deg, rgba(57,57,57, 0.26) 0%, rgba(57,57,57, 0.26) 4%,rgba(81,77,77, 0.24) 4%, rgba(81,77,77, 0.24) 75%,rgba(71,69,69, 0.36) 75%, rgba(71,69,69, 0.36) 100%),linear-gradient(90deg, rgb(149,149,149),rgb(149,149,149));
+}
+.App-header {
+  background-color: #19253b;
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: rgb(131, 179, 252);
+  border-bottom: 1px solid rgb(153, 153, 153);
+}
+.logoContainer {
+  margin-left: var(--logo_margin_left);
+  width: var(--logo_size);
+  height: var(--logo_size);
+}
+.logoContainer > img {
+  width: var(--logo_size);
+  height: var(--logo_size);
+}
+.h1Container {
+  width: var(--h1_container_width);
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.h1Container > h1 {
+  font-size: var(--h1_font-size);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.showOperator {
+  width: var(--showUserWidth);
+  margin-right: calc(var(--selectorWidth) / 12);
+  height: 6vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.showOperator > p {
+  color: lightblue;
+  font-size:  var(--selector_font_size);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.operatorChoiceSelector {
+  width: var(--selectorWidth);
+  height: calc(var(--selectorWidth) / 4);
+  background: rgb(9, 9, 150);
+  color: lightblue;
+  font-size: var(--selector_font_size);
 }

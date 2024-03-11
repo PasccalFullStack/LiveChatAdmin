@@ -1,0 +1,218 @@
+:root {
+    --mess_container_background: rgb(240, 240, 240);
+    --backgroundVal: radial-gradient(rgb(222, 245, 253), rgb(160, 176, 229), rgb(71, 71, 255));
+    --paddingVal: 0 5px 5px 5px;
+    --borderVal: 1px solid rgb(255, 196, 0);
+}
+.live_chat_container {
+    z-index: 10;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.hotline_menu {
+    width: 22vw;
+    height: 100vh;
+    position: fixed;
+    top: 12vh;
+    left: 0;
+    border-right: 1px solid rgb(153, 153, 153);
+    background-image: repeating-linear-gradient(165deg, rgba(143,143,143, 0.03) 0px, rgba(143,143,143, 0.03) 12px,transparent 12px, transparent 13px,rgba(143,143,143, 0.03) 13px, rgba(143,143,143, 0.03) 18px,transparent 18px, transparent 26px),repeating-linear-gradient(100deg, rgba(143,143,143, 0.03) 0px, rgba(143,143,143, 0.03) 6px,transparent 6px, transparent 14px,rgba(143,143,143, 0.03) 14px, rgba(143,143,143, 0.03) 26px,transparent 26px, transparent 38px),repeating-linear-gradient(342deg, rgba(143,143,143, 0.03) 0px, rgba(143,143,143, 0.03) 12px,transparent 12px, transparent 15px,rgba(143,143,143, 0.03) 15px, rgba(143,143,143, 0.03) 20px,transparent 20px, transparent 30px),repeating-linear-gradient(165deg, rgba(143,143,143, 0.03) 0px, rgba(143,143,143, 0.03) 5px,transparent 5px, transparent 7px,rgba(143,143,143, 0.03) 7px, rgba(143,143,143, 0.03) 12px,transparent 12px, transparent 23px),repeating-linear-gradient(347deg, rgba(143,143,143, 0.03) 0px, rgba(143,143,143, 0.03) 6px,transparent 6px, transparent 17px,rgba(143,143,143, 0.03) 17px, rgba(143,143,143, 0.03) 28px,transparent 28px, transparent 29px),repeating-linear-gradient(159deg, rgba(143,143,143, 0.03) 0px, rgba(143,143,143, 0.03) 6px,transparent 6px, transparent 7px,rgba(143,143,143, 0.03) 7px, rgba(143,143,143, 0.03) 12px,transparent 12px, transparent 21px),linear-gradient(107deg, rgb(81,81,96),rgb(81,81,96));
+}
+.hotline_menu > div {
+    width: 20vw;
+    margin-left: 1vw;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+.hotline_menu > div > p{
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(200, 200, 100, 0.4);
+    color: black;
+}
+.comChoosenTitle {
+    font-weight: 600;
+    font-size: 16px;
+    color: lightblue;
+    list-style: none;
+}
+.comChoosen {
+    margin: 1px 20px 0 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    transition: 0.2s;
+}
+.comChoosen:hover {
+    cursor: pointer;
+    transform: translateX(10px);
+}
+.comChoosen:active {
+    color: yellow;
+    transform: scale(0.8);
+}
+.unread_message {
+    position: relative;
+    top: -3px;
+}
+.mark_unread_message {
+    animation: mark_unread 2s linear infinite;
+}
+@keyframes mark_unread {
+    0%{color: black;}
+    55%{color: black;}
+    70%{color: yellow;}
+    85%{color: red;}
+    100%{color: black;}
+}
+.display_communication {
+    margin-left: 24vw;
+    height: 88vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.comTitle {
+    position: fixed;
+    z-index: 1000;
+    background: rgb(6, 12, 63);
+    color: lightyellow;
+    font-size: 18px;
+    height: 30px;
+    padding: 10px 15px 10px 10px;
+    overflow: hidden;
+    transition: 0.6s;
+}
+.comTitle:hover {
+    cursor: pointer;
+    height: 80px;
+}
+.comTitleSpan {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: -7px;
+}
+.comLimit {
+    width: 200px;
+    position: relative;
+    top: 3px;
+    left: 10px;
+    padding: 0 5px;
+}
+.display_communication > ul {
+    padding-top: 30px;
+}
+.oneMessageDiv {
+    width: 70vw;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    margin: 5px 0;
+}
+.comHeader {
+    position: relative;
+    width: 92%;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 4px;
+    margin: 2px 0 6px 0;
+    color: rgb(4, 16, 190);
+    background: rgba(180, 180, 180, 0.8);
+    padding: 0 5px;
+    list-style: none;
+}
+.comMessage {
+    width: 92%;
+    font-size: 16px;
+    color: rgb(4, 14, 29);
+    list-style: none;
+}
+.newMessageDiv {
+    list-style: none;
+    width: 70vw;
+    min-height: 50px;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    margin: 5px 0;
+}
+.comHeader > button {
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 6px;
+    margin: 2px 0 2px 16px;
+    padding: 2px 4px;
+    font-size: 16px;
+    background: var(--newMesButBackground);
+    transition: 0.2s;
+}
+.comHeader > button:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+}
+.comHeader > button:active {
+    filter: brightness(90%);
+    letter-spacing: 0.01em;
+}
+.fastAnswerBut {
+    padding: 0 2px;
+    font-size: 12px
+}
+.resolvedCom {
+    width: 100%;
+    text-align: right;
+}
+.resolvedComBut {
+    border: none;
+    outline: none;
+    background: rgb(255, 200, 98);
+    margin: 0 100px 6px 0;
+    font-size: 14px;
+    border: 1px solid rgb(66, 64, 64);
+    border-radius: 6px;
+}
+/* Modal pseudo is asked */
+.ask_pseudo_container {
+    background: rgba(148, 147, 147, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.ask_pseudo_content {
+    width: 300px;
+    height: 350px;
+    background: rgb(204, 204, 204);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    text-align: justify;
+}
+.ask_pseudo_content:focus {
+    background: white;
+}
+.pseudo_validation {
+    outline: none;
+    background: lightgreen;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.pseudo_validation:hover {
+    filter: brightness(120%);
+}
+.pseudo_validation:active {
+    filter: brightness(160%);
+}
